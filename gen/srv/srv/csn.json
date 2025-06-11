@@ -1,0 +1,53 @@
+{
+  "namespace": "INC",
+  "definitions": {
+    "INC.EMP": {
+      "kind": "context"
+    },
+    "INC.EMP.INCIDENTDETAILS": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "NAME": {
+          "type": "cds.String",
+          "length": 100
+        }
+      }
+    },
+    "Incident": {
+      "@source": "srv/Incident.cds",
+      "kind": "service"
+    },
+    "Incident.IncDet": {
+      "kind": "entity",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "INC.EMP.INCIDENTDETAILS"
+            ]
+          }
+        }
+      },
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "NAME": {
+          "type": "cds.String",
+          "length": 100
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v5.9.4",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

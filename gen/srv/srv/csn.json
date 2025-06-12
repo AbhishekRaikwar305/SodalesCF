@@ -15,6 +15,14 @@
         "NAME": {
           "type": "cds.String",
           "length": 100
+        },
+        "CITY": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "ISDEL": {
+          "type": "cds.String",
+          "length": 1
         }
       }
     },
@@ -41,7 +49,26 @@
         "NAME": {
           "type": "cds.String",
           "length": 100
+        },
+        "CITY": {
+          "type": "cds.String",
+          "length": 100
+        },
+        "ISDEL": {
+          "type": "cds.String",
+          "length": 1
         }
+      }
+    },
+    "Incident.insertIncident": {
+      "kind": "action",
+      "params": {
+        "asdfghjklmnbvcx": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
       }
     }
   },

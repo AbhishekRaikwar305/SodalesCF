@@ -18,6 +18,7 @@
       </Annotation>
       <EntityContainer Name="EntityContainer">
         <EntitySet Name="IncDet" EntityType="Incident.IncDet"/>
+        <ActionImport Name="insertIncident" Action="Incident.insertIncident"/>
       </EntityContainer>
       <EntityType Name="IncDet">
         <Key>
@@ -25,7 +26,13 @@
         </Key>
         <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
         <Property Name="NAME" Type="Edm.String" MaxLength="100"/>
+        <Property Name="CITY" Type="Edm.String" MaxLength="100"/>
+        <Property Name="ISDEL" Type="Edm.String" MaxLength="1"/>
       </EntityType>
+      <Action Name="insertIncident" IsBound="false">
+        <Parameter Name="asdfghjklmnbvcx" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Action>
     </Schema>
   </edmx:DataServices>
 </edmx:Edmx>

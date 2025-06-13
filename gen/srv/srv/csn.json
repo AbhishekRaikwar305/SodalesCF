@@ -27,7 +27,7 @@
       }
     },
     "Incident": {
-      "@source": "srv/Incident.cds",
+      "@source": "srv/INCIDENT/Incident.cds",
       "kind": "service"
     },
     "Incident.IncDet": {

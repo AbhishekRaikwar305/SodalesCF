@@ -12,7 +12,7 @@ module.exports = cds.service.impl(function()
             tx = cds.transaction(req);
 
             for (let i = 0; i < aEmployee.length; i++){
-                result = await tx.run(`CALL CreateIncident (?,?,?)`, [aEmployee[i].ID, aEmployee[i].NAME, aEmployee[i].CITY]);
+                result = await tx.run(`CALL "CreateIncident"(?,?,?)`, [aEmployee[i].ID, aEmployee[i].NAME, aEmployee[i].CITY]);
                 console.log(result);
             }
 
@@ -20,12 +20,13 @@ module.exports = cds.service.impl(function()
                 "Success" : "Employee is added Successfully."
             };
 
-            return JSON.stringify(returnobj);
+            return JSON.stringify(returnobj);     // return value in form of String
+            // return returnobj;     // return value in form of Object
         }
 
         catch(error){
             if(tx){
-                await this.tx.rollback();
+                // await tx.rollback();
             }
 
             return req.error({

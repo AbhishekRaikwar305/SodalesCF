@@ -12,7 +12,7 @@ module.exports = cds.service.impl(function()
             tx = cds.transaction(req);
 
             for (let i = 0; i < aEmployee.length; i++){
-                result = await tx.run(`CALL "CreateIncident"(?,?,?)`, [aEmployee[i].ID, aEmployee[i].NAME, aEmployee[i].CITY]);
+                result = await tx.run(`CALL "CreateIncident"(?,?,?)`, [aEmployee[i].NAME, aEmployee[i].CITY]);
                 console.log(result);
             }
 
